@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import {slides} from "../portfoliodata";
+import slides from "../portfoliodata";
 
 const PortfolioSliderDiv = styled.div`
   height: 100vh;
@@ -96,7 +96,7 @@ const ProjectDescription = styled.span`
 
 `;
 const ProjectLinkButton = styled.button`
-  width: 100px;
+  width: 125px;
   height : 50px;
   margin : 0 auto;
   cursor : pointer;
@@ -112,10 +112,10 @@ const PortfolioSlider = () => {
 
   const handleClick = (direction) => {
     if(direction === "left"){
-      setSlideIndex(slideIndex > 0 ? slideIndex-1 : 2);
+      setSlideIndex(slideIndex > 0 ? slideIndex-1 : 3);
     }
     else if(direction === "right"){
-      setSlideIndex(slideIndex < 2? slideIndex + 1 : 0);
+      setSlideIndex(slideIndex < 3? slideIndex + 1 : 0);
     }
   }
 
@@ -134,7 +134,7 @@ const PortfolioSlider = () => {
           <Right>
             <ProjectTitle>{item.title}</ProjectTitle>
             <ProjectDescription>{item.description}</ProjectDescription>
-            <ProjectLinkButton><GithubLink href={item.link} target="_blank">Github</GithubLink></ProjectLinkButton>
+            <ProjectLinkButton><GithubLink href={item.link} target="_blank">{item.buttonText}</GithubLink></ProjectLinkButton>
           </Right>
         </Slide>
         ))}

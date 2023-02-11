@@ -132,7 +132,7 @@ const Contact = () => {
                 </EmailInputDiv>
                 <SubjectInput type="input" placeholder='Subject' required/>
                 <MessageInput type="input" placeholder='Message' required />
-                <Submit type="button" value="Submit"/>
+                <Submit type="submit" value="Submit"/>
             </Form>
         </FormDiv>
         <Footer/>
